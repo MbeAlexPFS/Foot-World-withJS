@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FootWorld - A propos -</title>
+    <link rel="stylesheet" href="../asset/app.css">
+</head>
+<header class="flex between v-center p m bg-blue text-white raduis shadow-black gap no-toggled" id="header">
+    <div class="flex logo v-center hold between w-100">
+        .FootWorld
+        <div class="menu-actions">
+            <button id="no-toggled">
+                <img class="ico" src="../ressource/menu-100.png" >  
+            </button>
+            <button id="toggled">
+                <img src="../ressource/cross-100.png" class="ico" >   
+            </button>
+        </div>
+    </div>
+    <div class="flex gap v-center links">
+        <a class="link" href="/">Accueil</a>
+        <a class="link" href="match.html">Matches</a>
+        <a class="link active" href="">A&nbsp;propos</a>
+        <a class="link" href="login.html">Connexion</a>
+    </div> 
+</header>
+<body>
+    <div class="flex gap center absolute bg-blue v-center raduis p shadow-black hold" id="profil_viewer">
+        <button class="mini_btn" id="profil_btn">
+            <img src="../ressource/user-90.png" class="ico">
+        </button>
+       <div class="user_data hidden flex hold gap" id="user_data">
+            <div class="font" id="profil_name">
+                Mbe alex
+            </div>
+            <button class="mini_btn" id="show_full_profil">voir profil</button>
+            <button class="mini_btn" id="sign_out">Se déconnecter</button>
+       </div>
+    </div>
+    <div class="flex center column gap v-center m-2">
+        <h1 class="text-white"><em>A propos de nous</em></h1>
+        <div class="flex between">
+            <div class="p bg-dark-blue raduis font">
+                <h2 class="text-white">Notre histoire</h2>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus vitae quidem suscipit eveniet placeat ex sed labore, eaque natus eius praesentium voluptatum excepturi alias quis quas molestiae expedita ut! Dolore?
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque error quae nulla perferendis, iusto explicabo porro fuga veritatis iste sapiente esse dolorem labore, harum eius culpa consequuntur corrupti fugiat. Iste?
+                </p>  
+            </div>
+            <img class="img" src="../ressource/image (17).jpeg">
+        </div>
+    </div>
+    <script src="../asset/app.js"></script>
+</body>
+<footer class="text-center m p shadow-black text-white raduis bg-blue">
+    Tous droits reservés CakePalace.com 2025-2026
+</footer>
+</html>

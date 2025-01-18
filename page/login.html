@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FootWorld - Connexion -</title>
+    <link rel="stylesheet" href="../asset/app.css">
+</head>
+<header class="flex between v-center p m bg-blue text-white raduis shadow-black gap no-toggled" id="header">
+    <div class="flex logo v-center hold between w-100">
+        .FootWorld
+        <div class="menu-actions">
+            <button id="no-toggled">
+                <img class="ico" src="../ressource/menu-100.png" >  
+            </button>
+            <button id="toggled">
+                <img src="../ressource/cross-100.png" class="ico" >   
+            </button>
+        </div>
+    </div>
+    <div class="flex gap v-center links">
+        <a class="link" href="/">Accueil</a>
+        <a class="link" href="match.html">Matches</a>
+        <a class="link" href="about.html">A&nbsp;propos</a>
+        <a class="link active" href="">Connexion</a>
+    </div> 
+</header>
+<body>
+    <div class="flex gap center absolute bg-blue v-center raduis p shadow-black hold" id="profil_viewer">
+        <button class="mini_btn" id="profil_btn">
+            <img src="../ressource/user-90.png" class="ico">
+        </button>
+       <div class="user_data hidden flex hold gap" id="user_data">
+            <div class="font" id="profil_name">
+                Mbe alex
+            </div>
+            <button class="mini_btn" id="show_full_profil">voir profil</button>
+            <button class="mini_btn" id="sign_out">Se déconnecter</button>
+       </div>
+    </div>
+    <div class="flex center column gap v-center m-2">
+        <h1 class="text-white" id="form_title"><em>Connexion</em></h1>
+        <div class="flex center m gap hold"> 
+            <div class="flex column v-center backdrop p raduis shadow-black font form selected" id="form1">
+                <p>Veuillez remplir les champs ci&nbsp;dessous:</p>   
+                <form method="get">
+                    <div class="flex column m">
+                        <label for="email">Email</label>
+                        <input class="input" type="email" id="email" name="email" placeholder="Entrer votre email" required>
+                    </div>
+                    <div class="flex column m">
+                        <label for="mdp">Mot de passe</label>
+                        <input class="input" type="password" id="mdp" name="mdp" placeholder="Entrer votre mot de passe" required>
+                    </div>
+                    <p class="text-center m">Ou connectez vous avec:</p>
+                    <div class="flex gap center m hold">
+                        <a href="#"><img class="ico" src="../ressource/facebook-100.png"></a>
+                        <a href="#"><img class="ico" src="../ressource/instagram-100.png"></a>
+                        <a href="#"><img class="ico" src="../ressource/google-100.png"></a>          
+                    </div>
+                    <div class="flex between m">
+                        <div>
+                            <input class="btn m" type="submit" id="login" value="Se connecter">
+                            <input class="btn m" type="reset" value="Annuler">
+                        </div>
+                        <input class="btn m" type="button" value="S'inscrire" id="to_form2">
+                    </div>
+                </form>
+            </div>
+            <div class="flex column v-center backdrop p raduis shadow-black font form" id="form2">
+                <p>Veuillez remplir les champs ci&nbsp;dessous:</p>   
+                <form action="../index.html" method="get" id="sign_in_form">
+                    <div class="flex center gap m">
+                        <div class="flex column w-100">
+                            <label for="nom">Nom</label>
+                            <input class="input " id="nom" name="nom" type="text" placeholder="Entrer votre nom" required>
+                        </div>
+                        <div class="flex column w-100">
+                            <label for="prenom">Prenom</label>
+                            <input class="input " id="prenom" name="prenom" type="text" placeholder="Entrer votre prenom" required>
+                        </div>
+                    </div>
+                    <div class="flex column m">
+                        <label for="s_email">Email</label>
+                        <input class="input" type="email" id="s_email" name="email" placeholder="Entrer votre email" required>
+                    </div>
+                    <div class="flex column m">
+                        <label for="s_mdp">Mot de passe</label>
+                        <input class="input" type="password" id="s_mdp" name="mdp" placeholder="Entrer votre mot de passe" required>
+                    </div>
+                    <p class="text-center m">Ou inscrivez vous avec:</p>
+                    <div class="flex gap center m hold">
+                        <a href="#"><img class="ico" src="../ressource/facebook-100.png"></a>
+                        <a href="#"><img class="ico" src="../ressource/instagram-100.png"></a>
+                        <a href="#"><img class="ico" src="../ressource/google-100.png"></a>          
+                    </div>
+                    <div class="flex between m">
+                        <div>
+                            <input class="btn m" type="submit" id="sign_in" value="S'inscrire">
+                            <input class="btn m" type="reset" value="Annuler">
+                        </div>
+                        <input class="btn m" type="button" value="Se connecter" id="to_form1">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="../asset/app.js"></script>
+</body>
+<footer class="text-center m p shadow-black text-white raduis bg-blue">
+    Tous droits reservés CakePalace.com 2025-2026
+</footer>
+</html>
