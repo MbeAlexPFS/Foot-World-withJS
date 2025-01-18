@@ -253,7 +253,7 @@ body {
     border-radius: 5px;
 }
 
-.absolute {
+.fixed {
     position: fixed;
     top: 15vh;
     left: 6vw;
@@ -271,10 +271,37 @@ body {
     width: 0px;
 }
 
+.hidden-2 {
+    display: none;
+}
+
 #profil_viewer {
     z-index: 100;
 }
 
+.s-100 {
+    width: 100vw;
+    height: 100vh;
+}
+
+.fixed-2 {
+    position: fixed;
+    bottom: 0px;
+    right: 0;
+}
+
+.bg-ablack {
+    background-color: rgba(0, 0, 0, 0.521);
+    z-index: 100;
+}
+
+.bg-white {
+    background-color: white;
+}
+
+.w {
+    width: 600px ;
+}
 /* responsive style */
 @media screen and (max-width: 730px) {
     .flex {
@@ -311,6 +338,10 @@ body {
 
     .w-100-3 {
         width: 100%;
+    }
+
+    .w {
+        scale: 1 0.8;
     }
 
 }

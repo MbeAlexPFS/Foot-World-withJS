@@ -126,50 +126,88 @@ profil_btn.onclick = ()=>{
     }
 }
 
-//search system 1func
+//search and show match 3funcs (refactored by AI)
 function create_matches(img, titre, date, heure, abonné) {
     return `<div class="flex column white v-center raduis shadow-black p-top m backdrop">
-            <img class="img" src="${img}" alt="">
-            <div class="text-white font">
-                <h2>${titre}</h2>
-                <ul>
-                    <li>date: ${date}</li>
-                    <li>heure: ${heure}</li>
-                    <li>abonné: ${abonné}</li>
-                </ul>
-            </div>
-            <div class="flex column m center w-100">
-                <button>voir</button>
-            </div>
-            </div>`
+        <img class="img" src="${img}" alt="">
+        <div class="text-white font">
+            <h2>${titre}</h2>
+            <ul>
+                <li>date: ${date}</li>
+                <li>heure: ${heure}</li>
+                <li>abonné: ${abonné}</li>
+            </ul>
+        </div>
+        <div class="flex column m center w-100">
+            <button class="show" value="${img},${titre},${date},${heure},${abonné}">Voir</button>
+        </div>
+    </div>`;
 }
+
+function create_show_page(img, titre, date, heure, abonné) {
+    return `<div class="flex bg-white raduis p w">
+        <img src="${img}">
+        <div class="flex column gap m font">
+            <h1>${titre}</h1>
+            <ul>
+                <li>date: ${date}</li>
+                <li>heure: ${heure}</li>
+                <li>abonné: ${abonné}</li>
+            </ul>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum consequuntur placeat nostrum provident, delectus libero hic aliquid deserunt corrupti quibusdam eos inventore minima dolore ullam doloremque qui! Velit, perspiciatis ipsum.</p>
+            <div class="flex w-100 right">
+                <button id="close">Fermer</button>
+            </div>
+        </div>
+    </div>`;
+}
+
 let search_data = [
-    {"img":"../ressource/image (11).jpeg", "titre":"Barça vs Real", "data":"10/11/25", "heure":"20h 45min", "abonné":100},
-    {"img":"../ressource/image (19).jpeg", "titre":"Cote d'ivoire vs Burkina Faso", "data":"5/5/25", "heure":"10h 15min", "abonné":50},
-    {"img":"../ressource/image (15).jpeg", "titre":"Liverpool vs PSG", "data":"6/3/25", "heure":"9h 00min", "abonné":70}
-]
+    { "img": "../ressource/image (11).jpeg", "titre": "Barça vs Real", "date": "10/11/25", "heure": "20h 45min", "abonné": 100 },
+    { "img": "../ressource/image (19).jpeg", "titre": "Cote d'ivoire vs Burkina Faso", "date": "5/5/25", "heure": "10h 15min", "abonné": 50 },
+    { "img": "../ressource/image (15).jpeg", "titre": "Liverpool vs PSG", "date": "6/3/25", "heure": "9h 00min", "abonné": 70 }
+];
 
-let search = document.getElementById("search")
-let matches = document.getElementById("matches")
+let search = document.getElementById("search");
+let matches = document.getElementById("matches");
+let show_container = document.getElementById("show_container");
 
-//init
-for (const element of search_data) {
-    matches.innerHTML += create_matches(element.img,element.titre,element.date,element.heure,element.abonné)    
-}
-search.oninput = ()=> {
-    matches.innerHTML = ""
+function render_matches(filter = "") {
+    matches.innerHTML = "";
+
     for (const element of search_data) {
-        if (element.titre.toLowerCase().includes(search.value.toLowerCase()) || search.value == "") {
-            matches.innerHTML += create_matches(element.img,element.titre,element.date,element.heure,element.abonné)    
+        if (element.titre.toLowerCase().includes(filter.toLowerCase()) || filter === "") {
+            matches.innerHTML += create_matches(element.img, element.titre, element.date, element.heure, element.abonné);
         }
     }
-    if (matches.innerHTML == "") {
-        matches.innerHTML = `<div class="bg-blue w-100 p raduis font">Matche introuvable</div>`
+
+    if (matches.innerHTML === "") {
+        matches.innerHTML = `<div class="bg-blue w-100 p raduis font">Matche introuvable</div>`;
     }
 }
+render_matches();
+
+// search input
+search.oninput = () => {
+    render_matches(search.value);
+};
+
+// match show
+matches.addEventListener("click", (event) => {
+    if (event.target.classList.contains("show")) {
+        const [img, titre, date, heure, abonné] = event.target.value.split(",");
+        show_container.innerHTML = create_show_page(img, titre, date, heure, abonné);
+        show_container.classList.remove("hidden-2");
+
+        document.getElementById("close").onclick = () => {
+            show_container.classList.add("hidden-2");
+            show_container.innerHTML = "";
+        };
+    }
+});
 
 
-//total functions: 17
+//total functions: 19
 
 
 

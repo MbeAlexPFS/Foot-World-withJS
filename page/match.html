@@ -26,7 +26,7 @@
     </div> 
 </header>
 <body>
-    <div class="flex gap center absolute bg-blue v-center raduis p shadow-black hold" id="profil_viewer">
+    <div class="flex gap center fixed bg-blue v-center raduis p shadow-black hold" id="profil_viewer">
         <button class="mini_btn" id="profil_btn">
             <img src="../ressource/user-90.png" class="ico">
         </button>
@@ -38,6 +38,23 @@
             <button class="mini_btn" id="sign_out">Se déconnecter</button>
        </div>
     </div>
+    <div class="flex s-100 center v-center fixed-2 bg-ablack hidden-2" id="show_container">
+        <div class="flex bg-white raduis p w">
+            <img src="../ressource/image (19).jpeg">
+            <div class="flex column gap m font">
+                <h1>Barca vs Liverpool</h1>
+                <ul>
+                    <li>date: 10/11/2025</li>
+                    <li>heure: 20h 10min</li>
+                    <li>abonné: 50</li>
+                </ul>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum consequuntur placeat nostrum provident, delectus libero hic aliquid deserunt corrupti quibusdam eos inventore minima dolore ullam doloremque qui! Velit, perspiciatis ipsum.</p>
+                <div class="flex w-100 right">
+                    <button id="close"> fermer </button>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="flex center column gap v-center m-2">
         <h1 class="text-white"><em>Nos matches</em></h1>
         <div class="flex right w-100">
@@ -46,6 +63,7 @@
                 <input id="search" class="input w-100" type="text" value="" placeholder="rechercher un match">
             </div>   
         </div>
+        
         <div class="flex center wrap gap m" id="matches">
             
         </div>     
