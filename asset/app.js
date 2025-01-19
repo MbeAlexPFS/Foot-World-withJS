@@ -12,8 +12,9 @@ no_toggle_btn.onclick = ()=> {
     header.classList.replace("no-toggled","toggled")   
 }
 
-//Score debug function in commentary form - 4funcs
+
 if ( document.getElementById("score") != undefined ) {
+    //Score debug function in commentary form - 4funcs
     let score_select = document.getElementById("score")
     let score_debug = document.getElementById("score_debug")
     score_select.oninput = () => {
@@ -22,6 +23,51 @@ if ( document.getElementById("score") != undefined ) {
             score_html += `<img class="ico" src="ressource/star-90.png" alt="ico-star">`
         }
         score_debug.innerHTML = score_html
+    }
+
+    //comment function 1funcs
+    let btn_comment = document.getElementById("comment")
+    let commentary_page = document.getElementById("commentary_page")
+    let commentary_form = document.getElementById("comment_form")
+    let c_nom = document.getElementById("nom")
+    let c_email = document.getElementById("email")
+    let c_commentary = document.getElementById("com")
+    let c_score = document.getElementById("score")
+    let c_note = null
+    let c_score_debug = ``
+
+    btn_comment.onclick = ()=> {
+        if (c_nom.value != "" && c_email.value != "" && c_commentary.value != "") {
+        for (let i = 0; i < c_score.value; i++) {
+            c_score_debug += `<img class="ico" src="ressource/star-90.png" alt="ico-star">`
+        }
+        if (c_score.value == 1) {
+            c_note = "passable"
+        }else if (c_score.value == 2) {
+            c_note = "bien"    
+        }else if (c_score.value == 3) {
+            c_note = "très bien"
+        }else {
+            c_note = "excellent"
+        }
+        commentary_form.classList.add("hidden-2")
+        var now = new Date();
+        var options = { year: 'numeric', month: '2-digit', day: '2-digit' };
+        var formattedDate = new Intl.DateTimeFormat('en-GB', options).format(now); // DD/MM/YYYY format
+        commentary_page.innerHTML += `<div class="flex column gap m p font sized bg-blue raduis shadow-black">
+                <div class="flex between gap p">
+                    <div>${c_nom.value}</div>
+                    <div class="text-green">${c_note}</div>
+                </div>
+                <div>
+                    ${c_commentary.value}
+                </div>
+                <div class="flex between gap v-center m-3">
+                    <div class="flex hold">${c_score_debug}</div>
+                    <div>${formattedDate}</div>
+                </div>
+            </div>`
+    }
     }
     
 }
@@ -127,6 +173,7 @@ profil_btn.onclick = ()=>{
 }
 
 //search and show match 3funcs (refactored by AI)
+if (document.getElementById("search") != undefined) {
 function create_matches(img, titre, date, heure, abonné) {
     return `<div class="flex column white v-center raduis shadow-black p-top m backdrop">
         <img class="img" src="${img}" alt="">
@@ -205,9 +252,11 @@ matches.addEventListener("click", (event) => {
         };
     }
 });
+}
 
 
-//total functions: 19
+
+//total functions: 20
 
 
 
