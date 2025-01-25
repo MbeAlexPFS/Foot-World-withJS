@@ -107,7 +107,6 @@ if (document.getElementById("form1") != undefined) {
     let sign_in_form = document.getElementById("form2")
     let btn_to_login = document.getElementById("to_form1")
 
-    let sign_in = document.getElementById("sign_in")
     let login = document.getElementById("login")
 
     let f_nom = document.getElementById("nom")
