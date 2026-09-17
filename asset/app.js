@@ -86,14 +86,14 @@ if (document.getElementById("c_left") != undefined) {
         if (img_selected > 0) {
             img_selected -= 1
         }
-        i_carousel.setAttribute("src", img_list[img_selected])
+        i_carousel.outerHTML = '<img id="i_carousel" class="shadow-white w-100-3 raduis" src="'+ img_list[img_selected] +'" alt="">'
     }
 
     c_right.onclick = () => {
         if (img_selected < img_list.length-1) {
             img_selected += 1
         }
-        i_carousel.setAttribute("src", img_list[img_selected])
+        i_carousel.outerHTML = '<img id="i_carousel" class="shadow-white w-100-3 raduis" src="'+ img_list[img_selected] +'" alt="">'
     }
 }
 
