@@ -78,7 +78,7 @@ if (document.getElementById("c_left") != undefined) {
     let c_right = document.getElementById("c_right")
     let i_carousel = document.getElementById("i_carousel") 
     
-    let img_list = ["../ressource/image (1).jpeg","../ressource/image (12).jpeg","../ressource/image (13).jpeg","../ressource/image (6).jpeg"]
+    let img_list = ["ressource/image (1).jpeg","ressource/image (12).jpeg","ressource/image (13).jpeg","ressource/image (6).jpeg"]
     let img_selected = 0
 
 
