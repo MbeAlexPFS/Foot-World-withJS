@@ -209,9 +209,9 @@ function create_show_page(img, titre, date, heure, abonné) {
 }
 
 let search_data = [
-    { "img": "/ressource/image (11).jpeg", "titre": "Barça vs Real", "date": "10/11/25", "heure": "20h 45min", "abonné": 100 },
-    { "img": "../ressource/image (19).jpeg", "titre": "Cote d'ivoire vs Burkina Faso", "date": "5/5/25", "heure": "10h 15min", "abonné": 50 },
-    { "img": "../ressource/image (15).jpeg", "titre": "Liverpool vs PSG", "date": "6/3/25", "heure": "9h 00min", "abonné": 70 }
+    { "img": "ressource/image (11).jpeg", "titre": "Barça vs Real", "date": "10/11/25", "heure": "20h 45min", "abonné": 100 },
+    { "img": "ressource/image (19).jpeg", "titre": "Cote d'ivoire vs Burkina Faso", "date": "5/5/25", "heure": "10h 15min", "abonné": 50 },
+    { "img": "ressource/image (15).jpeg", "titre": "Liverpool vs PSG", "date": "6/3/25", "heure": "9h 00min", "abonné": 70 }
 ];
 
 let search = document.getElementById("search");
